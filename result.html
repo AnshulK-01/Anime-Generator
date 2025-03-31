@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April Fools! - Result</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="result-container">
+        <div class="video-box">
+            <div class="video-text">
+                <h2>April Fools!</h2>
+                <p>Congratulations! You've been fooled 😆 😂 🤣</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=VFEqYclw7KU" target="_blank" class="video-link">
+                <iframe id="prankVideo" 
+                        src="https://www.youtube.com/embed/VFEqYclw7KU?autoplay=1&loop=1&playlist=VFEqYclw7KU&controls=0&modestbranding=1&rel=0&showinfo=0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </a>
+            <div class="prank-text">Happy April Fools Day ~OffScript</div>
+            <div class="community-section">
+                <h3>Join our dynamic community</h3>
+                <a href="https://chat.whatsapp.com/CcazOsEL7roD7y9Mt38fM3" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    Join WhatsApp Group
+                </a>
+                <button onclick="shareWebsite()" class="share-btn">
+                    <i class="fas fa-share-alt"></i>
+                    Share with Friends
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function shareWebsite() {
+            // Use the deployed URL
+            const shareUrl = 'https://anshulkanswal.github.io/ANime-character-generator/';
+            const shareMessage = "🎉 April Fools! Check out this awesome anime character generator! Transform your photos into anime characters instantly! 🎨✨\n\nTry it yourself: " + shareUrl;
+
+            // Check if Web Share API is supported
+            if (navigator.share) {
+                navigator.share({
+                    title: 'AI Anime Generator',
+                    text: shareMessage,
+                    url: shareUrl
+                }).catch((error) => {
+                    console.log('Error sharing:', error);
+                    // Fallback to clipboard copy
+                    copyToClipboard(shareMessage);
+                });
+            } else {
+                // Fallback to clipboard copy
+                copyToClipboard(shareMessage);
+            }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Link copied to clipboard! You can now share it with your friends.');
+            }).catch((error) => {
+                console.log('Error copying to clipboard:', error);
+                alert('Failed to copy link. Please try again.');
+            });
+        }
+    </script>
+</body>
+</html> 
