@@ -39,8 +39,8 @@
 
     <script>
         function shareWebsite() {
-            // Get the current URL
-            const shareUrl = window.location.origin + window.location.pathname;
+            // Use the Vercel deployment URL
+            const shareUrl = 'https://anime-generator-two.vercel.app/';
             const shareMessage = "🎉 April Fools! Check out this awesome anime character generator! Transform your photos into anime characters instantly! 🎨✨\n\nTry it yourself: " + shareUrl;
 
             // Check if Web Share API is supported
